@@ -6,6 +6,9 @@ Some things I have tested, other things I have just picked up and noted here.
 
 # pandas
 
+* the category datatype can save memory and computation time on both text and numeric columns with repeating values. Even joins and filters are faster
+* using `float32` or `int32` instead of the default 64 datatypes can make operations faster and memory usage lighter
+
 ## Faster numerical expressions in pandas series and dataframes
 
 Pandas can make use of [`bottleneck`](https://github.com/pydata/bottleneck) and [`numexpr`](https://github.com/pydata/numexpr) to speed up computations.
