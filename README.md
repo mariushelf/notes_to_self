@@ -17,4 +17,5 @@ When installed, pandas will use them automatically. Explicit configuration wheth
 
 # Dummy Data
 
-* [Factory Boy](https://factoryboy.readthedocs.io/en/latest/) looks interesting to generate dummy data and mock data in an easy way.
+* [faker](https://faker.readthedocs.io/en/latest/) looks good to create dummy data
+* [Factory Boy](https://factoryboy.readthedocs.io/en/latest/) looks interesting to generate dummy data and mock data in combination with a database structure. Even supports django and sqlalchemy ORMs out of the box.
