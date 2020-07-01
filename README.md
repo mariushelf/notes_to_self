@@ -19,3 +19,13 @@ When installed, pandas will use them automatically. Explicit configuration wheth
 
 * [faker](https://faker.readthedocs.io/en/latest/) looks good to create dummy data
 * [Factory Boy](https://factoryboy.readthedocs.io/en/latest/) looks interesting to generate dummy data and mock data in combination with a database structure. It uses faker under the hood. Supports django and sqlalchemy ORMs out of the box.
+
+# git
+
+## Bash completion in Ubuntu
+
+If bash completion does not work after installation (or on some server systems), you need to source the respective file like so:
+
+`source /usr/share/bash-completion/completions/git`
+
+You can of course also add that to your `.bashrc`.
