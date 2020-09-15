@@ -4,6 +4,18 @@ Notes, hints and observations I pick up during my coding time.
 
 Some things I have tested, other things I have just picked up and noted here.
 
+# numpy
+
+* assignment to sliced arrays:
+  ```python
+  x = np.arrays([42,23,6,8])
+  x[[1,3]] += 1
+  x
+  >>> array([42, 24,  6,  9])
+  ```
+  In the above code, a temporary array containing the element 1 and 3 is created, modified and writtenback into `x`. See [numpy doc on Indexing](https://numpy.org/doc/1.19/user/basics.indexing.html#assigning-values-to-indexed-arrays).
+  
+
 # pandas
 
 * the category datatype can save memory and computation time on both text and numeric columns with repeating values. Even joins and filters are faster
