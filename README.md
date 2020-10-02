@@ -4,6 +4,14 @@ Notes, hints and observations I pick up during my coding time.
 
 Some things I have tested, other things I have just picked up and noted here.
 
+# Docker
+
+## Security: Docker overwrites ufw firewall rules
+
+Docker overwrites [UFW](https://help.ubuntu.com/community/UFW) firewall rules, meaning that every port you expose from Docker containers is reachable on the intranet, irrespectively of your UFW setup.
+
+To [prevent](https://www.techrepublic.com/article/how-to-fix-the-docker-and-ufw-security-flaw/) this you can add `DOCKER_OPTS="--iptables=false"` to `/etc/default/docker` and restart Docker (`sudo systemctl restart docker`).
+
 # numpy
 
 * assignment to sliced arrays:
