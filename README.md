@@ -12,6 +12,8 @@ Docker overwrites [UFW](https://help.ubuntu.com/community/UFW) firewall rules, m
 
 To [prevent](https://www.techrepublic.com/article/how-to-fix-the-docker-and-ufw-security-flaw/) this you can add `DOCKER_OPTS="--iptables=false"` to `/etc/default/docker` and restart Docker (`sudo systemctl restart docker`).
 
+To then allow a certain port again, run e.g. `sudo ufw allow <port_number>`, e.g, `sudo ufw allow 27017` for the mongodb default port.
+
 # numpy
 
 * assignment to sliced arrays:
