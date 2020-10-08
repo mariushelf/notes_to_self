@@ -24,6 +24,13 @@ To then allow a certain port again, run e.g. `sudo ufw allow <port_number>`, e.g
   >>> array([42, 24,  6,  9])
   ```
   In the above code, a temporary array containing the element 1 and 3 is created, modified and writtenback into `x`. See [numpy doc on Indexing](https://numpy.org/doc/1.19/user/basics.indexing.html#assigning-values-to-indexed-arrays).
+
+* slicing arrays with an actual slice is much faster than slicing by a list ("fancy slicing"), because the latter creates a copy, while slicing by slice creates a view: [numpy docs](https://scipy-cookbook.readthedocs.io/items/ViewsVsCopies.html#I-think-I-understand-what-a-view-is,-but-why-fancy-indexing-is-not-returning-a-view?):
+  ```python
+  a = np.random.random([100, 100])
+  x = a[:5]  # this is fast
+  x = a[[0,1,2,3,4]]  # this is about factor 8 to 10 slower
+  ```
   
 
 # pandas
