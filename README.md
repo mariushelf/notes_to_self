@@ -14,6 +14,24 @@ To [prevent](https://www.techrepublic.com/article/how-to-fix-the-docker-and-ufw-
 
 To then allow a certain port again, run e.g. `sudo ufw allow <port_number>`, e.g, `sudo ufw allow 27017` for the mongodb default port.
 
+# Enums
+
+Python-s built-in [enumerations](https://docs.python.org/3/library/enum.html) are very handy to define constants, however they are super slow.
+Use the [FastEnum](https://github.com/QratorLabs/fastenum) implementation instead.
+
+On a project with ~100,000 iterations in a loop and a few enum comparisons in each iteration I could achieve a 10% performance improvements by switching to the FastEnum implementation.
+
+**Note**: make sure to explicitly cast types. `FastEnum`s declared with a certain type do not compare to other types: 
+
+```python
+class MyEnum(int, metaclass=FastEnum)
+    A = 1
+
+a = MyEnum.A
+assert a == 1    # succeeds
+assert a == 1.0  # fails
+```
+
 # numpy
 
 * assignment to sliced arrays:
