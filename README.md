@@ -4,11 +4,10 @@ Notes, hints and observations I pick up during my coding time.
 
 Some things I have tested, other things I have just picked up and noted here.
 
-# Free disk space on ubuntu
+# Free disk space on ubuntu (2021-01-21)
 
 System:
 ``` bash
-sudo rm /var/lib/snapd/cache/*  # remove snap cache
 sudo apt clean  # clean apt cache
 ```
 
