@@ -4,6 +4,23 @@ Notes, hints and observations I pick up during my coding time.
 
 Some things I have tested, other things I have just picked up and noted here.
 
+# Free disk space on ubuntu
+
+System:
+``` bash
+sudo rm /var/lib/snapd/cache/*  # remove snap cache
+sudo apt clean  # clean apt cache
+```
+
+Home:
+- find and delete unused Python virtual environments. Get a list with `find -name "?venv"` (finds `venv` and `.venv`)
+- obviously, clean the Trash, Downloads folder, tmp folder
+- go through `~/.cache` and see what you can delete
+
+In general:
+- [QDirStat](https://github.com/shundhammer/qdirstat) is a nice tool to visually find the biggest files and folders on your disk
+
+
 # Docker
 
 ## Security: Docker overwrites ufw firewall rules
