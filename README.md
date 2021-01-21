@@ -15,8 +15,11 @@ sudo apt autoremove --purge  # remove packages that are not needed anymore (e.g.
 
 Home:
 - find and delete unused Python virtual environments. Get a list with `find -name "?venv"` (finds `venv` and `.venv`)
+- go through old projects and remove obsolete data
 - obviously, clean the Trash, Downloads folder, tmp folder
 - go through `~/.cache` and see what you can delete
+- limit the Spotify download cache: close Spotify, add `storage.size=1024` to `~/Library/Application Support/Spotify/prefs` and open Spotify again
+- clear the Steam download cache via `Settings` -> `Downloads`
 
 In general:
 - [QDirStat](https://github.com/shundhammer/qdirstat) is a nice tool to visually find the biggest files and folders on your disk
