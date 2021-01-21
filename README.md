@@ -9,6 +9,8 @@ Some things I have tested, other things I have just picked up and noted here.
 System:
 ``` bash
 sudo apt clean  # clean apt cache
+sudo journalctl --vacuum-time=10d  # clean old journal files (here: older than 10 days)
+sudo apt autoremove --purge  # remove packages that are not needed anymore (e.g., old kernels)
 ```
 
 Home:
