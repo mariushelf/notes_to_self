@@ -11,6 +11,7 @@ System:
 sudo apt clean  # clean apt cache
 sudo journalctl --vacuum-time=10d  # clean old journal files (here: older than 10 days)
 sudo apt autoremove --purge  # remove packages that are not needed anymore (e.g., old kernels)
+docker system prune --all  # delete all unused docker resources. Use with care
 ```
 
 Home:
