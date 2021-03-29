@@ -84,6 +84,16 @@ Pandas can make use of [`bottleneck`](https://github.com/pydata/bottleneck) and 
 
 When installed, pandas will use them automatically. Explicit configuration whether to use either via pandas options `compute.use_bottleneck` and `compute_use_numexpr` (both defaulting to True).
 
+# Python performance
+
+## numpy
+* `bottleneck` has some nice high-performance vector operations
+
+## asyncio
+* `uvloop` provides a significantly faster event loop. Usage:
+  `pip install uvloop`, and in the code: `import uvloop; uvloop.install(); asyncio.run(mymain())`
+
+
 # Dummy Data
 
 * [faker](https://faker.readthedocs.io/en/latest/) looks good to create dummy data
