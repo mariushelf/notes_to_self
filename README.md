@@ -86,6 +86,14 @@ When installed, pandas will use them automatically. Explicit configuration wheth
 
 # Python performance
 
+## compile python with optimization:
+
+```bash
+PYTHON_CFLAGS=-march=native CONFIGURE_OPTS='--enable-optimizations --with-lto' pyenv install 3.x.y
+```
+
+Docs: [Performance options](https://docs.python.org/3/using/configure.html#performance-options)
+
 ## numpy
 * `bottleneck` has some nice high-performance vector operations
 
