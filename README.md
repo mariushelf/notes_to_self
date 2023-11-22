@@ -10,6 +10,7 @@ Some things I have tested, other things I have just picked up and noted here.
 * [AltTab](https://alt-tab-macos.netlify.app/): turn the unusable MacOS task switcher into a usable list of all windows
 * [Bluesnooze](https://github.com/odlp/bluesnooze): turn Bluetooth off when the system sleeps such that the sleeping Macbook does not hijack the connection to your headphones
 * [Amphetamine](https://apps.apple.com/nl/app/amphetamine/id937984704?mt=12): keep your Mac awake and prevent it from sleeping while you run a long-running task
+* [Be Focused](https://apps.apple.com/us/app/be-focused-focus-timer/id973130201): pomodoro timer
 * [HammerSpoon](https://www.hammerspoon.org/): essential keyboard shortcuts and customization for keyboard lovers. Here's my configuration:
 ```
 -- hs.hotkey.bind({"ctrl", "cmd"}, "T", function()
