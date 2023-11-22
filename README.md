@@ -4,10 +4,127 @@ Notes, hints and observations I pick up during my coding time.
 
 Some things I have tested, other things I have just picked up and noted here.
 
-# CLI Profiler
+# MacOS tools: things that make MacOS usable
 
-- [Hyperfine](https://github.com/sharkdp/hyperfine)
+* [RunCat](https://kyome.io/runcat/index.html?lang=en): system usage indicator with a cute cat
+* [AltTab](https://alt-tab-macos.netlify.app/): turn the unusable MacOS task switcher into a usable list of all windows
+* [Bluesnooze](https://github.com/odlp/bluesnooze): turn Bluetooth off when the system sleeps such that the sleeping Macbook does not hijack the connection to your headphones
+* [Amphetamine](https://apps.apple.com/nl/app/amphetamine/id937984704?mt=12): keep your Mac awake and prevent it from sleeping while you run a long-running task
+* [HammerSpoon](https://www.hammerspoon.org/): essential keyboard shortcuts and customization for keyboard lovers. Here's my configuration:
+```
+-- hs.hotkey.bind({"ctrl", "cmd"}, "T", function()
+--     terminal = hs.application.get("Terminal")
+--     if terminal ~= nil
+--     then
+--         terminal:activate()
+--         hs.eventtap.keyStroke({"cmd"}, "N")
+--     else
+--         hs.application.open("Terminal")
+--     end
+-- end)
 
+hs.hotkey.bind({"ctrl", "cmd"}, "L", function() 
+    hs.eventtap.keyStroke({"ctrl", "cmd"}, "Q") 
+end)
+
+hs.hotkey.bind({"alt"}, "Right", function()
+    hs.window.animationDuration=0
+    local win = hs.window.focusedWindow()
+    local f = win:frame()
+    local screen = win:screen()
+    local max = screen:frame()
+
+    f.x = max.x + (max.w / 2)
+    f.y = max.y
+    f.w = max.w / 2
+    f.h = max.h
+    win:setFrame(f)
+end)
+
+hs.hotkey.bind({"alt"}, "Left", function()
+    hs.window.animationDuration=0
+    local win = hs.window.focusedWindow()
+    local f = win:frame()
+    local screen = win:screen()
+    local max = screen:frame()
+
+    f.x = max.x
+    f.y = max.y
+    f.w = max.w / 2
+    f.h = max.h
+    win:setFrame(f)
+end)
+
+-- hs.hotkey.bind({"alt"}, "Up", function()
+--     hs.window.animationDuration=0
+--     local win = hs.window.focusedWindow()
+--     local f = win:frame()
+--     local screen = win:screen()
+--     local max = screen:frame()
+-- 
+--     f.x = max.x
+--     f.y = max.y
+--     f.w = max.w
+--     f.h = max.h / 2
+--     win:setFrame(f)
+-- end)
+
+-- hs.hotkey.bind({"alt"}, "Down", function()
+--     hs.window.animationDuration=0
+--     local win = hs.window.focusedWindow()
+--     local f = win:frame()
+--     local screen = win:screen()
+--     local max = screen:frame()
+-- 
+--     f.x = max.x
+--     f.y = max.y + (max.h / 2)
+--     f.w = max.w
+--     f.h = max.h / 2
+--     win:setFrame(f)
+-- end)
+
+hs.hotkey.bind({"alt"}, "Up", function()
+    hs.window.animationDuration=0
+    local win = hs.window.focusedWindow()
+    local f = win:frame()
+    local screen = win:screen()
+    local max = screen:frame()
+
+    f.x = max.x
+    f.y = max.y
+    f.w = max.w
+    f.h = max.h
+    win:setFrame(f)
+end)
+
+hs.hotkey.bind({"alt"}, "Down", function()
+    hs.window.animationDuration=0
+    local win = hs.window.focusedWindow()
+    local f = win:frame()
+    local screen = win:screen()
+    local max = screen:frame()
+
+    f.x = max.x + max.w * .25
+    f.y = max.y + max.h * .25
+    f.w = max.w * 0.5
+    f.h = max.h * 0.5
+    win:setFrame(f)
+end)
+
+
+function moveToNextScreen()
+    hs.window.animationDuration=0
+    local app = hs.window.focusedWindow()
+    app:moveToScreen(app:screen():next())
+    -- app:maximize()
+end
+hs.hotkey.bind({"alt"}, "k", moveToNextScreen)
+```
+
+# Profiling and Benchmarks
+
+- General purpose CLI benchmarking: [Hyperfine](https://github.com/sharkdp/hyperfine)
+- Python memory profiling: [memory_profiler](https://github.com/pythonprofilers/memory_profiler). Can create nice graphs of memory usage over time.
 
 # Free disk space on ubuntu (2021-01-21)
 
