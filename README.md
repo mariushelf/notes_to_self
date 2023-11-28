@@ -4,6 +4,12 @@ Notes, hints and observations I pick up during my coding time.
 
 Some things I have tested, other things I have just picked up and noted here.
 
+# Shell config
+
+* [Liquid Prompt](https://github.com/liquidprompt/liquidprompt): useful shell prompt with git branch, venv, ... for Bash and ZShell.
+* [direnv](https://direnv.net/) to automatically load `.env` files and even activate python environments when you cd into the folder.
+* 
+
 # MacOS tools: things that make MacOS usable
 
 * [RunCat](https://kyome.io/runcat/index.html?lang=en): system usage indicator with a cute cat
