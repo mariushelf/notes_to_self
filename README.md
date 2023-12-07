@@ -8,7 +8,12 @@ Some things I have tested, other things I have just picked up and noted here.
 
 * [Liquid Prompt](https://github.com/liquidprompt/liquidprompt): useful shell prompt with git branch, venv, ... for Bash and ZShell.
 * [direnv](https://direnv.net/) to automatically load `.env` files and even activate python environments when you cd into the folder.
-* 
+  * to load `.env` files (and not only `.envrc`):
+```shell
+cat ~/.config/direnv/direnv.toml
+[global]
+load_dotenv = true
+```
 
 # MacOS tools: things that make MacOS usable
 
