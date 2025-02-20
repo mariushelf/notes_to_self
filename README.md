@@ -256,3 +256,5 @@ You can of course also add that to your `.bashrc`.
 ## Remove files from history
 
 To remove files from the history (e.g., those old Jupyter notebooks that are huuuge, but no one will ever look at again), [BFG Repo Cleaner](https://github.com/rtyley/bfg-repo-cleaner) seems to be the tool of choice.
+
+Update 2025-02-20: maybe better use [git-filter-repo](https://htmlpreview.github.io/?https://github.com/newren/git-filter-repo/blob/docs/html/git-filter-repo.html#EXAMPLES). This also supports changing commit user and email and a lot of other things.
